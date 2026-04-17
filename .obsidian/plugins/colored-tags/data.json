@@ -1,0 +1,33 @@
+{
+  "palette": {
+    "seed": 0,
+    "selected": "adaptive-soft",
+    "custom": "e12729-f37324-f8cc1b-72b043-007f4e"
+  },
+  "mixColors": true,
+  "transition": true,
+  "accessibility": {
+    "highTextContrast": false
+  },
+  "knownTags": {
+    "access-control": 1,
+    "active-directory": 2,
+    "automation": 3,
+    "capstone": 4,
+    "cybersecurity": 5,
+    "icacls": 6,
+    "incident-response": 7,
+    "log-management": 8,
+    "networking": 9,
+    "onboarding": 10,
+    "powershell-scripting": 11,
+    "process-management": 12,
+    "service-monitoring": 13,
+    "task-scheduler": 14,
+    "troubleshooting": 15,
+    "user-provisioning": 16,
+    "windows-cli": 17
+  },
+  "tagColors": {},
+  "_version": 4
+}
