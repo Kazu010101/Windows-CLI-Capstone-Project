@@ -55,7 +55,8 @@ C:\
         └── Reports\
 ```
 
-![[Pasted image 20260417210807.png]]
+<img width="378" height="140" alt="image" src="https://github.com/user-attachments/assets/3632275e-d441-4d2a-a416-643302671511" />
+
 **Screenshot evidence:** The `tree` command confirms the structure was created successfully — `C:\Departments` contains `HR`, which contains `Reports`.
 
 cmdlet:
@@ -73,7 +74,9 @@ Two local security groups were created to implement RBAC:
 | ---------- | --------------------------------------- |
 | `HR_Read`  | Read-only access to HR Reports          |
 | `HR_Admin` | Full administrative access to all of HR |
-![[Pasted image 20260417172013.png]]
+
+<img width="951" height="246" alt="image" src="https://github.com/user-attachments/assets/b9bd3bbd-155f-4e26-9cad-9a7d56e2b648" />
+
 **Screenshot evidence:** `New-LocalGroup` was run for both groups with descriptions, and the output confirms each group was created successfully.
 
 cmdlet:
@@ -90,7 +93,8 @@ New-LocalGroup -Name "HR_Admin" -Description "Full-Access HR Admin group"
 
 HR_Admin is granted Full Control at the `\HR` folder level so it can manage all HR resources, including subfolders.
 
-![[Pasted image 20260417172236.png|697]]
+<img width="758" height="63" alt="image" src="https://github.com/user-attachments/assets/846bfd36-e001-4b00-ae05-61bc415193e2" />
+
 
 **Screenshot evidence:** `icacls C:\Departments\HR /grant "HR_Admin:(OI)(CI)(F)"` ran successfully — output confirms `Successfully processed 1 files; Failed processing 0 files`.
 
@@ -109,7 +113,7 @@ icacls C:\Departments\HR /grant "HR_Admin:(OI)(CI)(F)"
 
 HR_Read is scoped specifically to `\Reports` — they cannot access other folders within `\HR`.
 
-![[Pasted image 20260417172524.png]]
+<img width="839" height="65" alt="image" src="https://github.com/user-attachments/assets/34bba3df-a911-4f9e-830e-5b44978f2aae" />
 
 **Screenshot evidence:** `icacls C:\Departments\HR\Reports\ /grant "HR_Read:(OI)(CI)(RX)"` ran successfully.
 
@@ -129,10 +133,12 @@ icacls C:\Departments\HR\Reports\ /grant "HR_Read:(OI)(CI)(RX)"
 
 ### Verify HR ACLs
 
-![[Pasted image 20260417172614.png]]
+<img width="735" height="190" alt="image" src="https://github.com/user-attachments/assets/aeb3b682-f878-43e0-b3c5-513b050faf93" />
+
 **Screenshot evidence (HR folder):** `icacls C:\Departments\HR` output shows `DESKTOP-NBVFIGL\HR_Admin:(OI)(CI)(F)` highlighted in red — confirming HR_Admin has Full Control with full inheritance.
 
-![[Pasted image 20260417172645.png]]
+<img width="794" height="201" alt="image" src="https://github.com/user-attachments/assets/392dc522-d9a1-4f3f-b592-299281d83607" />
+
 **Screenshot evidence (Reports folder):** `icacls C:\Departments\HR\Reports` output shows `DESKTOP-NBVFIGL\HR_Read:(OI)(CI)(RX)` highlighted in red — confirming HR_Read has Read+Execute scoped to Reports.
 
 cmdlet:
@@ -143,9 +149,11 @@ icacls C:\Departments\HR\Reports
 
 ### Verify File-Level Inheritance
 
-![[Pasted image 20260417172740.png]]
+<img width="620" height="403" alt="image" src="https://github.com/user-attachments/assets/fb391100-84aa-41c4-9b51-68e66d3169e8" />
 
-![[Pasted image 20260417172951.png]]
+
+<img width="666" height="163" alt="image" src="https://github.com/user-attachments/assets/32983573-2524-45a5-b1e3-df0f45005367" />
+
 
 **Screenshot evidence:** A test file `test.txt` was created in `C:\Departments\HR`. Running `icacls .\test.txt` (and equivalently `icacls C:\Departments\HR\test.txt`) shows that `HR_Admin:(I)(F)` is already present — the `(I)` flag indicates this was **automatically inherited** from the `\HR` folder's `(OI)` setting, without any explicit file-level grant being needed.
 
@@ -164,7 +172,8 @@ This section simulates and resolves a conflict between a user's individual permi
 
 ### #1 – Create testuser and add to HR_Read
 
-![[Pasted image 20260417173027.png]]
+<img width="684" height="348" alt="image" src="https://github.com/user-attachments/assets/3b9beb84-1a35-4682-a0cb-48942dff7553" />
+
 **Screenshot evidence:** `net user testuser /add` was run, followed by `net user` to confirm `testuser` appears in the account list (highlighted in red). Then `net localgroup HR_Read testuser /add` added the user to the group.
 
 cmdlet: 
@@ -175,9 +184,11 @@ net localgroup HR_Read testuser /add
 
 ### #2 – Create testfile.txt and verify inherited permissions
 
-![[Pasted image 20260417173121.png|697]]
+<img width="861" height="484" alt="image" src="https://github.com/user-attachments/assets/8b669e82-5279-4a1f-a596-f8b841756c6b" />
 
-![[Pasted image 20260417173243.png]]
+
+<img width="818" height="158" alt="image" src="https://github.com/user-attachments/assets/a4fb4fa2-a86d-4d34-bbe6-552629fcf314" />
+
 
 **Screenshot evidence:** `New-Item "C:\Departments\HR\Reports\testfile.txt"` created the file. Running `icacls "C:\Departments\HR\Reports\"` confirms `HR_Read:(OI)(CI)(RX)` is set on the folder, and `icacls "C:\Departments\HR\Reports\testfile.txt"` shows `HR_Read:(I)(RX)` — the file correctly inherited Read+Execute from its parent folder.
 
@@ -191,7 +202,8 @@ icacls "C:\Departments\HR\Reports\testfile.txt"
 
 ### #3 – Verify testuser can read the file (before DENY)
 
-![[Pasted image 20260417173342.png]]
+<img width="980" height="509" alt="image" src="https://github.com/user-attachments/assets/d7af5111-7d7e-4e18-b7db-375621b895c4" />
+
 **Screenshot evidence:** `runas /user:testuser powershell` was used to launch PowerShell as testuser. After confirming identity with `whoami`, running `Get-Content "C:\Departments\HR\Reports\testfile.txt"` successfully returned `"Secret HR document"` — confirming testuser inherits HR_Read's RX permission.
 
 cmdlet: 
@@ -203,7 +215,8 @@ Get-Content "C:\Departments\HR\Reports\testfile.txt"
 
 ### #4 – Apply Explicit DENY to testuser
 
-![[Pasted image 20260417173516.png|697]]
+<img width="813" height="274" alt="image" src="https://github.com/user-attachments/assets/3cf20706-d48a-46c2-bad1-9b70a8fb396c" />
+
 **Screenshot evidence:** `icacls "C:\Departments\HR\Reports\" /deny "testuser:(OI)(CI)(R)"` was run. The subsequent `icacls` output clearly shows two conflicting entries: `testuser:(DENY)(R)` above `HR_Read:(OI)(CI)(RX)` — the DENY is now explicit and will take precedence.
 
 cmdlet: 
@@ -214,7 +227,8 @@ icacls "C:\Departments\HR\Reports\"
 
 ### #5 – Verify DENY overrides group Allow
 
-![[Pasted image 20260417173706.png]]
+<img width="1090" height="332" alt="image" src="https://github.com/user-attachments/assets/0e4d898a-cb45-4d01-b483-ab991725f90a" />
+
 
 **Screenshot evidence:** Back in testuser's PowerShell session, `Get-Content "C:\Departments\HR\Reports\testfile.txt"` now throws `Get-Content : Access is denied` — a `PermissionDenied` / `UnauthorizedAccessException` error. This confirms that an **Explicit Deny overrides an Explicit Allow**, even when the Allow comes from a group membership.
 
