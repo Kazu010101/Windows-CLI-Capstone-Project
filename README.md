@@ -8,13 +8,13 @@
 
 ## 📋 Lab Overview
 
-| # | Lab | Key Skills | Difficulty |
-|---|-----|-----------|------------|
-| 01 | [Department Folder Setup & Access Control](#-lab-01--department-folder-setup-and-access-control) | NTFS ACLs, RBAC, Least Privilege | ⭐⭐ |
-| 02 | [Process Crash & Service Restart](#-lab-02--process-crash-and-service-restart) | Service management, PS scripting, Monitoring | ⭐⭐ |
-| 03 | [Network Access Denial Investigation](#-lab-03--network-access-denial-investigation) | Network triage, Incident reporting | ⭐⭐ |
-| 04 | [Log Cleanup Automation](#-lab-04--log-cleanup-automation) | Scripting, Task Scheduler, Log management | ⭐⭐⭐ |
-| 05 | [Onboarding Automation Script](#-lab-05--onboarding-automation-script) | User provisioning, Full automation, Error handling | ⭐⭐⭐ |
+| # | Lab | Key Skills |
+|---|-----|-----------|
+| 01 | [Department Folder Setup & Access Control](#-lab-01--department-folder-setup-and-access-control) | NTFS ACLs, RBAC, Least Privilege |
+| 02 | [Process Crash & Service Restart](#-lab-02--process-crash-and-service-restart) | Service management, PS scripting, Monitoring |
+| 03 | [Network Access Denial Investigation](#-lab-03--network-access-denial-investigation) | Network triage, Incident reporting |
+| 04 | [Log Cleanup Automation](#-lab-04--log-cleanup-automation) | Scripting, Task Scheduler, Log management |
+| 05 | [Onboarding Automation Script](#-lab-05--onboarding-automation-script) | User provisioning, Full automation, Error handling |
 
 📎 **[Windows CLI Cheatsheet](./Windows_CLI_Cheatsheet.md)** — consolidated command reference across all labs
 
