@@ -223,6 +223,7 @@ Three PowerShell commands register the task. Each builds on the previous:
 <img width="1090" height="139" alt="image" src="https://github.com/user-attachments/assets/daa6ce3c-fa35-4834-a626-10bf05069a94" />
 
 **Screenshot evidence:** `$action` and `$trigger` are defined.
+
 **Screenshot evidence:** `$principal` is set to run as SYSTEM (highest privilege), then `Register-ScheduledTask` creates the task. The output confirms: `TaskName: WeeklyLogCleanupTask`, `State: Ready`.
 
 ```powershell
