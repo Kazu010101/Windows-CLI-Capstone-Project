@@ -400,8 +400,8 @@ Get-Help icacls /?                              # CMD built-in help
 
 | Lab | Topic | Key Tools |
 |---|---|---|
-| [[Capstone Lab_01_Department_Folder_Setup_and_Access_Control]] | ACLs & RBAC | `icacls`, `New-LocalGroup`, `net user` |
-| [[Capstone Lab_02_Process_Crash_and_Service_Restart]] | Service monitoring | `Get-Service`, `Restart-Service`, `tasklist`, `while($true)` |
-| [[Capstone Lab_03_Network_Access_Denial_Investigation]] | Network triage | `ipconfig`, `ping`, `tracert`, `netstat`, `nslookup` |
-| [[Capstone Lab_04_Log_Cleanup_Automation]] | Scheduled automation | `Get-ChildItem`, `Remove-Item`, `Register-ScheduledTask` |
-| [[Capstone Lab_05_Onboarding_Automation_Script]] | User provisioning | `New-LocalUser`, `Add-LocalGroupMember`, `icacls`, `Read-Host` |
+| <a href="https://github.com/Kazu010101/Windows-CLI-Capstone-Project/blob/main/Windows%20CLI%20Capstone%20Projects/Capstone%20Lab_01_Department_Folder_Setup_and_Access_Control.md">Department Folder Setup and Access Control</a> | ACLs & RBAC | `icacls`, `New-LocalGroup`, `net user` |
+| <a href="https://github.com/Kazu010101/Windows-CLI-Capstone-Project/blob/main/Windows%20CLI%20Capstone%20Projects/Capstone%20Lab_02_Process_Crash_and_Service_Restart.md">Process Crash and Service Restart | Service monitoring | `Get-Service`, `Restart-Service`, `tasklist`, `while($true)` |
+| <a href="https://github.com/Kazu010101/Windows-CLI-Capstone-Project/blob/main/Windows%20CLI%20Capstone%20Projects/Capstone%20Lab_03_Network_Access_Denial_Investigation.md">Network Access Denial Investigation | Network triage | `ipconfig`, `ping`, `tracert`, `netstat`, `nslookup` |
+| <a href="https://github.com/Kazu010101/Windows-CLI-Capstone-Project/blob/main/Windows%20CLI%20Capstone%20Projects/Capstone%20Lab_04_Log_Cleanup_Automation.md">Log Cleanup Automation | Scheduled automation | `Get-ChildItem`, `Remove-Item`, `Register-ScheduledTask` |
+| <a href="https://github.com/Kazu010101/Windows-CLI-Capstone-Project/blob/main/Windows%20CLI%20Capstone%20Projects/Capstone%20Lab_05_Onboarding_Automation_Script.md">Onboarding Automation Script | User provisioning | `New-LocalUser`, `Add-LocalGroupMember`, `icacls`, `Read-Host` |
