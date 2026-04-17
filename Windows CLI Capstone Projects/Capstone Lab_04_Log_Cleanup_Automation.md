@@ -55,7 +55,8 @@ This pattern is critical for scripts that must log failures rather than silently
 
 Before writing the cleanup script, realistic test data was created: 17 log files with staggered creation dates, so logs 14–17 are older than 14 days.
 
-![[Pasted image 20260417183053.png]]
+<img width="554" height="341" alt="image" src="https://github.com/user-attachments/assets/ef129fed-fd32-4620-99f2-b321fcdaafcd" />
+
 **Screenshot evidence:** A PowerShell `for` loop runs from `$i=1` to `17` (highlighted in red). Each iteration creates `C:\CapstoneLogs\log$i.log` with random content (1KB–50KB). The `CreationTime` and `LastWriteTime` of each file are backset by `$i` days using `.AddDays(-$i)`.
 
 ```powershell
@@ -78,7 +79,8 @@ for ($i=1; $i -le 17; $i++)
 
 ### Verify Dummy Logs Creation
 
-![[Pasted image 20260417183626.png]]
+<img width="640" height="563" alt="image" src="https://github.com/user-attachments/assets/ec44216d-714b-4a8e-a1c9-7ee9d3a9e5f7" />
+
 **Screenshot evidence:** `ls` (alias for `Get-ChildItem`) in `C:\CapstoneLogs` shows all 17 log files with their `LastWriteTime`. Logs `log14.log` through `log17.log` are highlighted in red — their dates (25/02/2026 to 28/02/2026) are more than 14 days before the lab date of 14/03/2026, confirming they are the deletion targets.
 
 ```powershell
@@ -92,7 +94,8 @@ Get-ChildItem C:\CapstoneLogs | Sort-Object LastWriteTime    # Sort by date for 
 
 ### Create the ps1 File
 
-![[Pasted image 20260417183847.png]]
+<img width="661" height="198" alt="image" src="https://github.com/user-attachments/assets/32b84ec4-fa0d-4dc0-bfc1-9417a4cfc976" />
+
 **Screenshot evidence:** `New-Item C:\Scripts\cleanup2.ps1 -ItemType File` creates a 0-byte script file dated 14/03/2026.
 
 ```powershell
@@ -101,7 +104,8 @@ New-Item C:\Scripts\cleanup2.ps1 -ItemType File
 
 ### Script Contents
 
-![[Pasted image 20260417184016.png]]
+<img width="1090" height="756" alt="image" src="https://github.com/user-attachments/assets/bbba1932-8068-425f-bfd3-e827d72a5101" />
+
 **Screenshot evidence:** The full script was entered via `edit cleanup2.ps1`. The key logic sections are:
 - `$date_limit = (Get-Date).AddDays(-14)` — calculates the cutoff date
 - `Get-ChildItem $folder -Filter *.log` — fetches only `.log` files
@@ -158,7 +162,8 @@ foreach ($file in $files)
 
 ## Step 3 – Create the Log File
 
-![[Pasted image 20260417184232.png]]
+<img width="759" height="194" alt="image" src="https://github.com/user-attachments/assets/e8616f81-9e8d-4115-b541-d66943b08e7e" />
+
 **Screenshot evidence:** `New-Item C:\CapstoneLogs\cleanup2.log -ItemType File` creates the log file that the script will write to.
 
 ```powershell
@@ -173,7 +178,8 @@ New-Item C:\CapstoneLogs\cleanup2.log -ItemType File
 
 ### Bypass Execution Policy
 
-![[Pasted image 20260417184343.png]]
+<img width="815" height="26" alt="image" src="https://github.com/user-attachments/assets/6c33df07-00c1-42a3-a84e-dd8bbae80ea6" />
+
 **Screenshot evidence:** `powershell -ExecutionPolicy Bypass -File C:\Scripts\cleanup2.ps1` is run to bypass the default policy that blocks unsigned scripts.
 
 ```powershell
@@ -191,7 +197,8 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 
 ### Verify the Log
 
-![[Pasted image 20260417184754.png]]
+<img width="590" height="149" alt="image" src="https://github.com/user-attachments/assets/27c28241-4c13-4fd3-8a59-441dec8002ce" />
+
 **Screenshot evidence:** After execution, `Get-Content C:\CapstoneLogs\cleanup2.log` shows four timestamped entries (highlighted in red), one for each deleted file:
 - `03/14/2026 13:54:48 Deleted file: log14.log`
 - `03/14/2026 13:54:48 Deleted file: log15.log`
@@ -211,8 +218,10 @@ ls C:\CapstoneLogs                              # Confirm log14-17 are gone
 ## Step 5 – Schedule with Task Scheduler
 
 Three PowerShell commands register the task. Each builds on the previous:
-![[Pasted image 20260417184933.png]]
-![[Pasted image 20260417184946.png]]
+<img width="1090" height="36" alt="image" src="https://github.com/user-attachments/assets/0762ca96-e39f-4958-87fa-2487d8cd4a58" />
+
+<img width="1090" height="139" alt="image" src="https://github.com/user-attachments/assets/daa6ce3c-fa35-4834-a626-10bf05069a94" />
+
 **Screenshot evidence:** `$action` and `$trigger` are defined.
 **Screenshot evidence:** `$principal` is set to run as SYSTEM (highest privilege), then `Register-ScheduledTask` creates the task. The output confirms: `TaskName: WeeklyLogCleanupTask`, `State: Ready`.
 
@@ -257,7 +266,8 @@ Or set email notification via Task Scheduler GUI (Action > Send an e-mail) — t
 The `try/catch` block already handles this:
 - **Success:** `Add-Content $logfile "$(Get-Date) Deleted file: $($file.Name)"`
 - **Failure:** `Add-Content $logfile "$(Get-Date) ERROR: unable to delete $($file.Name) - Permission Denied"`
-![[Pasted image 20260417185236.png]]
+<img width="1090" height="756" alt="image" src="https://github.com/user-attachments/assets/2aba0e24-e38b-4c36-b93f-bb167a5cac56" />
+
 
 ---
 
