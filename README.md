@@ -34,7 +34,7 @@
 
 **Tools:** `icacls`, `New-LocalGroup`, `net user`, `net localgroup`, `runas`
 
-👉 **<a href="https://github.com/Kazu010101/Windows-CLI-Capstone-Project/blob/main/Windows%20CLI%20Capstone%20Projects/Capstone%20Lab_01_Department_Folder_Setup_and_Access_Control.md">View Lab notes**
+👉 **<a href="https://github.com/Kazu010101/Windows-CLI-Capstone-Project/blob/main/Windows%20CLI%20Capstone%20Projects/Capstone%20Lab_01_Department_Folder_Setup_and_Access_Control.md">View Full Lab notes**
 
 ---
 
@@ -53,7 +53,7 @@
 
 **Tools:** `Get-Service`, `Restart-Service`, `tasklist`, `taskkill`, `Add-Content`, `Start-Sleep`
 
-👉 **[View Full Lab Notes](./Lab_02_Process_Crash_and_Service_Restart.md)**
+👉 **<a href="https://github.com/Kazu010101/Windows-CLI-Capstone-Project/blob/main/Windows%20CLI%20Capstone%20Projects/Capstone%20Lab_02_Process_Crash_and_Service_Restart.md">View Full Lab Notes**
 
 ---
 
@@ -73,7 +73,7 @@
 
 **Tools:** `ipconfig`, `ping`, `tracert`, `netstat`, `nslookup`, `netsh`
 
-👉 **[View Full Lab Notes](./Lab_03_Network_Access_Denial_Investigation.md)**
+👉 **<a href="https://github.com/Kazu010101/Windows-CLI-Capstone-Project/blob/main/Windows%20CLI%20Capstone%20Projects/Capstone%20Lab_03_Network_Access_Denial_Investigation.md">View Full Lab Notes**
 
 ---
 
@@ -91,7 +91,7 @@
 
 **Tools:** `Get-ChildItem`, `Remove-Item`, `Add-Content`, `Register-ScheduledTask`, `New-ScheduledTaskAction`, `New-ScheduleTaskTrigger`
 
-👉 **[View Full Lab Notes](./Lab_04_Log_Cleanup_Automation.md)**
+👉 **<a href="https://github.com/Kazu010101/Windows-CLI-Capstone-Project/blob/main/Windows%20CLI%20Capstone%20Projects/Capstone%20Lab_04_Log_Cleanup_Automation.md">View Full Lab Notes**
 
 ---
 
@@ -110,7 +110,7 @@
 
 **Tools:** `New-LocalUser`, `Add-LocalGroupMember`, `icacls`, `Read-Host`, `ConvertTo-SecureString`, `Add-Content`, `try/catch`
 
-👉 **[View Full Lab Notes](./Lab_05_Onboarding_Automation_Script.md)**
+👉 **<a href="https://github.com/Kazu010101/Windows-CLI-Capstone-Project/blob/main/Windows%20CLI%20Capstone%20Projects/Capstone%20Lab_05_Onboarding_Automation_Script.md">View Full Lab Notes**
 
 ---
 
