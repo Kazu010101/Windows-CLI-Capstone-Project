@@ -16,7 +16,7 @@
 | 04 | <a href="https://github.com/Kazu010101/Windows-CLI-Capstone-Project/blob/main/Windows%20CLI%20Capstone%20Projects/Capstone%20Lab_04_Log_Cleanup_Automation.md">Log Cleanup Automation | Scripting, Task Scheduler, Log management |
 | 05 | <a href="https://github.com/Kazu010101/Windows-CLI-Capstone-Project/blob/main/Windows%20CLI%20Capstone%20Projects/Capstone%20Lab_05_Onboarding_Automation_Script.md">Onboarding Automation Script | User provisioning, Full automation, Error handling |
 
-📎 **[Windows CLI Cheatsheet](./Windows_CLI_Cheatsheet.md)** — consolidated command reference across all labs
+📎 **<a href="https://github.com/Kazu010101/Windows-CLI-Capstone-Project/blob/main/Windows%20CLI%20Capstone%20Projects/Windows_CLI_Cheatsheet.md">Windows CLI Cheatsheet** — consolidated command reference across all labs
 
 ---
 
