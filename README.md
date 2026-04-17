@@ -10,7 +10,7 @@
 
 | # | Lab | Key Skills |
 |---|-----|-----------|
-| 01 | [Department Folder Setup & Access Control](#-lab-01--department-folder-setup-and-access-control) | NTFS ACLs, RBAC, Least Privilege |
+| 01 | <a href="https://github.com/Kazu010101/Windows-CLI-Capstone-Project/blob/main/Windows%20CLI%20Capstone%20Projects/Capstone%20Lab_01_Department_Folder_Setup_and_Access_Control.md">Department Folder Setup and Access Control</a> | NTFS ACLs, RBAC, Least Privilege |
 | 02 | [Process Crash & Service Restart](#-lab-02--process-crash-and-service-restart) | Service management, PS scripting, Monitoring |
 | 03 | [Network Access Denial Investigation](#-lab-03--network-access-denial-investigation) | Network triage, Incident reporting |
 | 04 | [Log Cleanup Automation](#-lab-04--log-cleanup-automation) | Scripting, Task Scheduler, Log management |
