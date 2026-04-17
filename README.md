@@ -133,7 +133,7 @@
 
 ## 📎 Quick Reference
 
-📄 **[Windows CLI Cheatsheet](./Windows_CLI_Cheatsheet.md)** — all commands from every lab in one place, organised by category
+📄 **<a href="https://github.com/Kazu010101/Windows-CLI-Capstone-Project/blob/main/Windows%20CLI%20Capstone%20Projects/Windows_CLI_Cheatsheet.md">Windows CLI Cheatsheet** — all commands from every lab in one place, organised by category
 
 ---
 
