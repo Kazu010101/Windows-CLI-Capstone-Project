@@ -50,8 +50,10 @@ Many services cannot start unless other services are already running. For exampl
 
 ### Verify Spooler is Running
 
-![[Pasted image 20260417174403.png|464]]
-![[Pasted image 20260417174810.png]]
+<img width="464" height="134" alt="image" src="https://github.com/user-attachments/assets/b12a27a9-efb4-4388-92f8-fea3b6c0a4b5" />
+
+<img width="431" height="104" alt="image" src="https://github.com/user-attachments/assets/9dd0f23f-8269-45b2-a343-23192f07ed50" />
+
 **Screenshot evidence:** `Start-Service Spooler` followed by `Get-Service Spooler` shows `Status: Running` and `DisplayName: Print Spooler`.
 
 cmdlet:
@@ -62,7 +64,8 @@ Get-Service Spooler
 
 ### Locate the Process in tasklist
 
-![[Pasted image 20260417174511.png]]
+<img width="781" height="665" alt="image" src="https://github.com/user-attachments/assets/d2fbbffe-0cda-46a9-9452-e95bfafd482b" />
+
 **Screenshot evidence:** `tasklist` output lists all running processes. `spoolsv.exe` is visible with PID `1492` (highlighted in red), confirming the process is active in memory.
 
 cmdlet:
@@ -75,7 +78,7 @@ tasklist | findstr spoolsv        # Filter for just the Spooler process
 
 ## Step 2 – Terminate the Service
 
-![[Pasted image 20260417174855.png]]
+<img width="708" height="45" alt="image" src="https://github.com/user-attachments/assets/76c57fb6-2045-4e7a-aec6-59555a7d5e52" />
 
 **Screenshot evidence:** `taskkill /IM spoolsv.exe /F` was run. The output confirms: `SUCCESS: The process "spoolsv.exe" with PID 1492 has been terminated.`
 
@@ -95,7 +98,7 @@ taskkill /IM spoolsv.exe /F
 
 ## Step 3 – Restart and Confirm
 
-![[Pasted image 20260417175111.png]]
+<img width="790" height="111" alt="image" src="https://github.com/user-attachments/assets/9b356037-36d8-4b5e-8ec0-661321ac9992" />
 
 **Screenshot evidence:** `Restart-Service Spooler` was run. The follow-up `tasklist | findstr spoolsv` shows `spoolsv.exe` with a **new PID of 7684** (highlighted in red), and `Get-Process | findstr spoolsv` confirms PID 7684 is active. This PID change from 1492 confirms the service was genuinely restarted — not simply still running.
 
@@ -113,7 +116,8 @@ Get-Service Spooler                # Confirm Status: Running
 
 ### Create the Script File
 
-![[Pasted image 20260417175210.png]]
+<img width="691" height="203" alt="image" src="https://github.com/user-attachments/assets/68b2334f-33a0-4eae-9eee-e72059846314" />
+
 
 **Screenshot evidence:** `New-Item scriptcheck.ps1` was run from `C:\ServiceCrash\`, creating a 0-byte file dated 14/03/2026.
 
@@ -124,7 +128,8 @@ New-Item C:\ServiceCrash\scriptcheck.ps1
 
 ### Script Contents
 
-![[Pasted image 20260417175508.png]]
+<img width="963" height="491" alt="image" src="https://github.com/user-attachments/assets/10c3944b-6508-4472-84d6-d70672cd4db0" />
+
 **Screenshot evidence:** The script was entered via `edit scriptcheck.ps1`. The key logic is an infinite `while ($true)` loop that checks service status every 300 seconds (5 minutes). If the service is not `Running`, it restarts it and appends a timestamped log entry using `Add-Content` (highlighted in red).
 
 ```powershell
@@ -158,7 +163,8 @@ while ($true)
 
 ### Verify the Script Works
 
-![[Pasted image 20260417175731.png]]
+<img width="695" height="429" alt="image" src="https://github.com/user-attachments/assets/0dea33e4-7212-4525-8da5-69da5dabd1e1" />
+
 
 **Screenshot evidence:**
 1. `Get-Service Spooler` confirms Status is `Stopped`.
@@ -166,7 +172,8 @@ while ($true)
 3. `Get-Content .\service_monitor.log` shows the entry: `03/14/2026 02:16:44 Restarted Service: Spooler`.
 4. `Get-Process | findstr spoolsv` confirms a new PID of `452` — the service was restarted by the script.
 
-![[Pasted image 20260417180058.png]]
+<img width="579" height="151" alt="image" src="https://github.com/user-attachments/assets/643496e8-5614-4e0d-9803-3efcc107d44c" />
+
 5. `edit .\service_monitor.log` confirms the log file contains exactly one timestamped restart entry.
 
 cmdlet: 
@@ -183,7 +190,8 @@ Get-Process | findstr spoolsv                 # New PID confirms actual restart
 
 ## Step 5 – Check Service Dependencies
 
-![[Pasted image 20260417180216.png]]
+<img width="595" height="128" alt="image" src="https://github.com/user-attachments/assets/67d86013-a6a0-49b3-aa1b-e09d80b0f2d7" />
+
 **Screenshot evidence:** `Get-Service Spooler -RequiredServices` lists two dependencies: `RPCSS` (Remote Procedure Call — Status: Running) and `http` (HTTP Service — Status: Running). Both must be active for Spooler to start.
 
 cmdlet: 
