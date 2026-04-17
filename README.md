@@ -8,12 +8,12 @@
 
 ## 📋 Lab Overview
 
-| # | Lab | Key Skills |
+| # | Capstone Lab | Key Skills |
 |---|-----|-----------|
 | 01 | <a href="https://github.com/Kazu010101/Windows-CLI-Capstone-Project/blob/main/Windows%20CLI%20Capstone%20Projects/Capstone%20Lab_01_Department_Folder_Setup_and_Access_Control.md">Department Folder Setup and Access Control</a> | NTFS ACLs, RBAC, Least Privilege |
 | 02 | <a href="https://github.com/Kazu010101/Windows-CLI-Capstone-Project/blob/main/Windows%20CLI%20Capstone%20Projects/Capstone%20Lab_02_Process_Crash_and_Service_Restart.md">Process Crash and Service Restart | Service management, PS scripting, Monitoring |
 | 03 | <a href="https://github.com/Kazu010101/Windows-CLI-Capstone-Project/blob/main/Windows%20CLI%20Capstone%20Projects/Capstone%20Lab_03_Network_Access_Denial_Investigation.md">Network Access Denial Investigation | Network triage, Incident reporting |
-| 04 | [Log Cleanup Automation](#-lab-04--log-cleanup-automation) | Scripting, Task Scheduler, Log management |
+| 04 | <a href="https://github.com/Kazu010101/Windows-CLI-Capstone-Project/blob/main/Windows%20CLI%20Capstone%20Projects/Capstone%20Lab_04_Log_Cleanup_Automation.md">Log Cleanup Automation | Scripting, Task Scheduler, Log management |
 | 05 | [Onboarding Automation Script](#-lab-05--onboarding-automation-script) | User provisioning, Full automation, Error handling |
 
 📎 **[Windows CLI Cheatsheet](./Windows_CLI_Cheatsheet.md)** — consolidated command reference across all labs
