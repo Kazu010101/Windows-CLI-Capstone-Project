@@ -34,7 +34,7 @@
 
 **Tools:** `icacls`, `New-LocalGroup`, `net user`, `net localgroup`, `runas`
 
-👉 **[View Full Lab Notes](./Lab_01_Department_Folder_Setup_and_Access_Control.md)**
+👉 **<a href="https://github.com/Kazu010101/Windows-CLI-Capstone-Project/blob/main/Windows%20CLI%20Capstone%20Projects/Capstone%20Lab_01_Department_Folder_Setup_and_Access_Control.md">View Lab notes**
 
 ---
 
