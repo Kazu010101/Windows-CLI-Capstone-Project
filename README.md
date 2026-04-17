@@ -14,7 +14,7 @@
 | 02 | <a href="https://github.com/Kazu010101/Windows-CLI-Capstone-Project/blob/main/Windows%20CLI%20Capstone%20Projects/Capstone%20Lab_02_Process_Crash_and_Service_Restart.md">Process Crash and Service Restart | Service management, PS scripting, Monitoring |
 | 03 | <a href="https://github.com/Kazu010101/Windows-CLI-Capstone-Project/blob/main/Windows%20CLI%20Capstone%20Projects/Capstone%20Lab_03_Network_Access_Denial_Investigation.md">Network Access Denial Investigation | Network triage, Incident reporting |
 | 04 | <a href="https://github.com/Kazu010101/Windows-CLI-Capstone-Project/blob/main/Windows%20CLI%20Capstone%20Projects/Capstone%20Lab_04_Log_Cleanup_Automation.md">Log Cleanup Automation | Scripting, Task Scheduler, Log management |
-| 05 | [Onboarding Automation Script](#-lab-05--onboarding-automation-script) | User provisioning, Full automation, Error handling |
+| 05 | <a href="https://github.com/Kazu010101/Windows-CLI-Capstone-Project/blob/main/Windows%20CLI%20Capstone%20Projects/Capstone%20Lab_05_Onboarding_Automation_Script.md">Onboarding Automation Script | User provisioning, Full automation, Error handling |
 
 📎 **[Windows CLI Cheatsheet](./Windows_CLI_Cheatsheet.md)** — consolidated command reference across all labs
 
