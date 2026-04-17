@@ -52,7 +52,8 @@ A common mistake is assuming the problem is DNS when it is actually a routing is
 
 ## Step 1 – Run ipconfig
 
-![[Pasted image 20260417181122.png]]
+<img width="889" height="365" alt="image" src="https://github.com/user-attachments/assets/55244293-b6db-4151-8a9f-199eae584a93" />
+
 **Screenshot evidence:** `ipconfig` output shows:
 - IPv4 Address: `192.168.1.100`
 - Subnet Mask: `255.255.255.0` (/24 — correct)
@@ -71,7 +72,8 @@ ipconfig /all          # Shows additional info: DNS servers, DHCP lease, MAC add
 
 ### ping – Test Internet Reachability
 
-![[Pasted image 20260417181318.png]]
+<img width="970" height="321" alt="image" src="https://github.com/user-attachments/assets/34374450-95aa-4730-820c-a20909e8a746" />
+
 **Screenshot evidence:** `ping 8.8.8.8` (Google's public DNS server) results in 4 timeouts with `100% packet loss` (highlighted in red). No packets reached the internet.
 
 ```powershell
@@ -91,7 +93,8 @@ tracert 8.8.8.8
 
 ### netstat – Check Active Connections
 
-![[Pasted image 20260417181450.png]]
+<img width="635" height="133" alt="image" src="https://github.com/user-attachments/assets/592f0071-86f6-4861-8c2b-99c3041bbd72" />
+
 **Screenshot evidence:** `netstat` output shows `Active Connections` with an empty table — no foreign address connections. This is consistent with a machine that cannot reach external hosts.
 
 ```cmd
@@ -104,7 +107,8 @@ netstat -b             # Show which process owns each connection (requires admin
 
 ## Step 3 – Log Evidence to File
 
-![[Pasted image 20260417181601.png]]
+<img width="824" height="845" alt="image" src="https://github.com/user-attachments/assets/7ab1742d-aa26-4d49-8f8b-4874ae03db5b" />
+
 **Screenshot evidence:** A series of commands redirect and append all diagnostic outputs into a single report file at `C:\networklab\network_outage_report.txt`. The subsequent `Get-Content` shows the consolidated output — ipconfig, both ping results, tracert, and netstat — all in one file.
 
 ```powershell
@@ -161,7 +165,8 @@ All network connectivity test evidence is logged at `C:\networklab\network_outag
 
 ### What command helps verify DNS resolution?
 
-![[Pasted image 20260417181830.png]]
+<img width="406" height="320" alt="image" src="https://github.com/user-attachments/assets/e67a9249-1780-4279-a3cd-2bf94ae590eb" />
+
 **Screenshot evidence:** `nslookup google.com` was run. The output shows repeated `DNS request timed out` messages — the DNS server (`8.8.8.8`) could not be reached because the gateway is broken. This confirms DNS failure is a **downstream symptom** of the gateway misconfiguration, not the root cause.
 
 ```cmd
@@ -172,6 +177,8 @@ nslookup google.com 1.1.1.1    # Test with Cloudflare DNS
 
 ### How to check for proxy issues?
 
+<img width="454" height="143" alt="image" src="https://github.com/user-attachments/assets/9902255e-9fec-4f1d-bd72-145d2614ea20" />
+
 **Screenshot evidence:** `netsh winhttp show proxy` returns `Direct access (no proxy server)`. This confirms that no proxy is configured and proxy is not contributing to the issue.
 
 ```cmd
@@ -180,7 +187,8 @@ netsh winhttp show proxy
 
 ### How to check for firewall issues?
 
-![[Pasted image 20260417182012.png]]
+<img width="944" height="903" alt="image" src="https://github.com/user-attachments/assets/dea10592-ddd9-481b-9cc4-3235548b65bb" />
+
 **Screenshot evidence:** `netsh advfirewall show allprofiles` shows all three profiles (Domain, Private, Public) have `Firewall Policy: BlockInbound, AllowOutbound` (highlighted in red). Since outbound traffic is **allowed**, the firewall is not blocking the user's internet access.
 
 ```powershell
