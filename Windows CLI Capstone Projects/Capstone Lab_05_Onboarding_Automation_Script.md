@@ -66,7 +66,8 @@ Reusing reserved variable names can cause silent bugs or script errors.
 
 Before running the onboarding script, two groups were created to represent cybersecurity teams:
 
-![[Pasted image 20260417190309.png]]
+<img width="645" height="253" alt="image" src="https://github.com/user-attachments/assets/d2f725b9-6df1-48d4-9a02-1106f5019305" />
+
 **Screenshot evidence:** `New-LocalGroup SOC -Description "SOC Team"` and `New-LocalGroup DFIR -Description "DFIR Team"` both ran successfully, with output confirming each group's name and description.
 
 ```powershell
@@ -83,8 +84,10 @@ New-LocalGroup DFIR -Description "DFIR Team"
 
 ## Step 1 – Create the Script File
 
-![[Pasted image 20260417190352.png]]
-![[Pasted image 20260417190418.png]]
+<img width="764" height="198" alt="image" src="https://github.com/user-attachments/assets/69dac43e-d762-422b-88c9-55fd605b2de3" />
+
+<img width="640" height="34" alt="image" src="https://github.com/user-attachments/assets/7b79028c-9b9e-46d2-936e-6a134c892d22" />
+
 **Screenshot evidence:** `New-Item C:\Scripts\onboarding.ps1 -ItemType File` creates the script, and `edit C:\Scripts\onboarding.ps1` opens it in the Windows editor for writing.
 
 ```powershell
@@ -97,8 +100,9 @@ edit C:\Scripts\onboarding.ps1
 ## Step 2 – Write the Onboarding Script
 
 The full script is split across two screenshots below. The complete script is reconstructed here with inline explanations:
-![[Pasted image 20260417190548.png]]
-![[Pasted image 20260417190608.png]]
+<img width="981" height="860" alt="image" src="https://github.com/user-attachments/assets/7e5b9e65-a17c-4d2c-8d45-91f9bb53b4c3" />
+<img width="1090" height="644" alt="image" src="https://github.com/user-attachments/assets/0aa41bee-efb0-43fe-9655-5bd1af19f815" />
+
 ```powershell
 # specify log file location
 $logfile = "C:\CapstoneLogs\onboarding.log"
@@ -201,7 +205,8 @@ In the catch block, `$_` is the current error object. `.Exception.Message` gives
 
 ## Step 3 – Create the Log File
 
-![[Pasted image 20260417191051.png]]
+<img width="796" height="184" alt="image" src="https://github.com/user-attachments/assets/6f470a58-080f-4890-b370-2fcf9ffe73e9" />
+
 **Screenshot evidence:** `New-Item C:\CapstoneLogs\onboarding.log -ItemType File` creates the log file.
 
 ```powershell
@@ -214,7 +219,8 @@ New-Item C:\CapstoneLogs\onboarding.log -ItemType File
 
 ### Run the Script
 
-![[Pasted image 20260417191629.png]]
+<img width="766" height="825" alt="image" src="https://github.com/user-attachments/assets/a30f5b65-7ed9-4560-88fd-96b4cfc804d9" />
+
 **Screenshot evidence:** `.\onboarding.ps1` is run. The interactive prompts appear:
 1. `Enter new username:` → operator types `Luke`
 2. `Select User's Group:` → `1 - SOC` shown, operator selects `1`
@@ -233,8 +239,9 @@ The directory info below confirms `C:\TeamData\Luke` was created with the correc
 
 ### Verify the Onboarding Log
 
-![[Pasted image 20260417191804.png]]
-**Screenshot evidence:** `Get-Content C:\CapstoneLogs\onboarding.log` shows the full log history. Previous runs show failed attempts (other test usernames), but the final entry at the bottom (highlighted in red) reads:
+<img width="765" height="431" alt="image" src="https://github.com/user-attachments/assets/5064a44b-227e-4e51-b5a6-9b3a546249ee" />
+
+**Screenshot evidence:** `Get-Content C:\CapstoneLogs\onboarding.log` shows the full log history. Previous runs show failed attempts (other test usernames because script's trial and error), but the final entry at the bottom (highlighted in red) reads:
 `03/16/2026 01:07:29 ONBOARDING SUCCESS - User Luke is created in SOC group`
 
 ```powershell
@@ -243,7 +250,8 @@ Get-Content C:\CapstoneLogs\onboarding.log
 
 ### Verify icacls Permissions
 
-![[Pasted image 20260417191926.png]]
+<img width="704" height="190" alt="image" src="https://github.com/user-attachments/assets/77e33285-2a0e-41a1-92ec-65bd305c9f91" />
+
 **Screenshot evidence:** `icacls C:\TeamData\Luke\` confirms the correct permission structure (highlighted in red):
 
 | Principal | Permission | Meaning |
