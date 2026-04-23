@@ -20,7 +20,7 @@
 
 ---
 
-## 🔐 Lab 01 – Department Folder Setup and Access Control
+## Lab 01 – Department Folder Setup and Access Control
 
 **Scenario:** The HR team at VertexSoft needs a secure directory structure for confidential reports. Configure folder permissions so that `HR_Admin` has full control and `HR_Read` can only view reports.
 
@@ -38,7 +38,7 @@
 
 ---
 
-## ⚙️ Lab 02 – Process Crash and Service Restart
+## Lab 02 – Process Crash and Service Restart
 
 **Scenario:** A critical service on an app server keeps crashing. Investigate the process, restart it, and write a monitoring script that automatically recovers the service every 5 minutes.
 
@@ -57,7 +57,7 @@
 
 ---
 
-## 🌐 Lab 03 – Network Access Denial Investigation
+## Lab 03 – Network Access Denial Investigation
 
 **Scenario:** Users in the Sales department cannot access the internet. Investigate the root cause, collect evidence, and produce a report for both technical and non-technical stakeholders.
 
@@ -77,7 +77,7 @@
 
 ---
 
-## 🗂️ Lab 04 – Log Cleanup Automation
+## Lab 04 – Log Cleanup Automation
 
 **Scenario:** The system accumulates old log files weekly. Automate the deletion of `.log` files older than 14 days, log every deletion, and schedule it to run weekly without manual intervention.
 
@@ -95,7 +95,7 @@
 
 ---
 
-## 👤 Lab 05 – Onboarding Automation Script
+## Lab 05 – Onboarding Automation Script
 
 **Scenario:** Create a fully automated PowerShell onboarding script for new employees. A single script run should provision the user, assign them to a team, create their home directory, set folder permissions, and produce an audit log.
 
