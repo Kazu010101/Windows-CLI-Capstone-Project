@@ -1,4 +1,4 @@
-# 🖥️ Windows CLI Capstone Projects
+# Windows CLI Capstone Projects
 
 > A series of hands-on labs practising Windows system administration and security tasks using **CMD and PowerShell exclusively** — no GUI allowed.
 >
