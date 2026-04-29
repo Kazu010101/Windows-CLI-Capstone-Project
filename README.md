@@ -6,7 +6,7 @@
 
 ---
 
-## 📋 Lab Overview
+## Lab Overview
 
 | # | Capstone Lab | Key Skills |
 |---|-----|-----------|
